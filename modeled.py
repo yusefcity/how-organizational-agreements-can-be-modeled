@@ -49,4 +49,20 @@ def report(db):
 
 def metrics():
     data = {
-        "ops"
+        "ops": 120,
+        "status": "stable",
+        "errors": 0
+    }
+    print("Metrics:", json.dumps(data))
+
+def footer():
+    print("End of document contract system")
+
+def main():
+    db, h, sig = process_pipeline()
+    report(db)
+    metrics()
+    footer()
+
+if __name__ == "__main__":
+    main()
